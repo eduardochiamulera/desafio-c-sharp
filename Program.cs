@@ -10,18 +10,18 @@ namespace Algorithm.Logic
         /// <summary>
         /// PROBLEMA:
         /// 
-        /// Implementar um algoritmo para o controle de posição de um drone em um plano cartesiano (X, Y).
+        /// Implementar um algoritmo para o controle de posição de um drone em um plano cartesiano(X, Y).
         /// 
         /// O ponto inicial do drone é "(0, 0)" para cada execução do método Evaluate ao ser executado cada teste unitário.
         /// 
-        /// A string de entrada pode conter os seguintes caracteres N, S, L, e O representando Norte, Sul, Leste e Oeste 
+        /// A string de entrada pode conter os seguintes caracteres N, S, L, e O representando Norte, Sul, Leste e Oeste
         /// respectivamente.
         /// Estes catacteres podem estar presentes aleatóriamente na string de entrada.
-        /// Uma string de entrada "NNNLLL" irá resultar em uma posição final "(3, 3)", assim como uma string "NLNLNL" irá 
+        /// Uma string de entrada "NNNLLL" irá resultar em uma posição final "(3, 3)", assim como uma string "NLNLNL" irá
         /// resultar em "(3, 3)".
         /// 
-        /// Caso o caracter X esteja presente, o mesmo irá cancelar a operação anterior. 
-        /// Caso houver mais de um caracter X consecutivo, o mesmo cancelará mais de uma ação na quantidade em que o X 
+        /// Caso o caracter X esteja presente, o mesmo irá cancelar a operação anterior.
+        /// Caso houver mais de um caracter X consecutivo, o mesmo cancelará mais de uma ação na quantidade em que o X
         /// estiver presente.
         /// Uma string de entrada "NNNXLLLXX" irá resultar em uma posição final "(1, 2)" pois a string poderia ser simplificada 
         /// para "NNL".
@@ -29,9 +29,9 @@ namespace Algorithm.Logic
         /// Além disso, um número pode estar presente após o caracter da operação, representando o "passo" que a operação deve 
         /// acumular.
         /// Este número deve estar compreendido entre 1 e 2147483647.
-        /// Deve-se observar que a operação 'X' não suporta opção de "passo" e deve ser considerado inválido. Uma string de entrada 
+        /// Deve-se observar que a operação 'X' não suporta opção de "passo" e deve ser considerado inválido.Uma string de entrada
         /// "NNX2" deve ser considerada inválida.
-        /// Uma string de entrada "N123LSX" irá resultar em uma posição final "(1, 123)" pois a string pode ser simplificada para 
+        /// Uma string de entrada "N123LSX" irá resultar em uma posição final "(1, 123)" pois a string pode ser simplificada para
         /// "N123L"
         /// Uma string de entrada "NLS3X" irá resultar em uma posição final "(1, 1)" pois a string pode ser siplificada para "NL".
         /// 
@@ -44,7 +44,7 @@ namespace Algorithm.Logic
         /// </summary>
         /// <param name="input">String no padrão "N1N2S3S4L5L6O7O8X"</param>
         /// <returns>String representando o ponto cartesiano após a execução dos comandos (X, Y)</returns>
-        
+
         public static string Evaluate(string input)
         {
 
@@ -131,13 +131,13 @@ namespace Algorithm.Logic
                     break;
                 case 'S':
                     if (numero.HasValue)
-                        y += -numero.Value;
+                        y -= numero.Value;
                     else
                         y--;
                     break;
                 case 'O':
                     if (numero.HasValue)
-                        x += -numero.Value;
+                        x -= numero.Value;
                     else
                         x--;
                     break;
